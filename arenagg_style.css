@@ -1,0 +1,864 @@
+/* --- Global Styles & Variables (ArenaGG Theme) --- */
+:root {
+    --primary-red: #E60023;
+    --bg-dark: #101010;      /* Very dark background */
+    --bg-medium: #1a1a1a;   /* Slightly lighter dark for cards/elements */
+    --bg-light-card: #ffffff; /* For potential light cards like login */
+    --border-color: #333333;  /* Dark subtle border */
+    --text-light: #ffffff;
+    --text-medium: #cccccc;
+    --text-dark: #333333;    /* For text on light backgrounds */
+    --success-color: #2ecc71;
+    --danger-color: var(--primary-red); /* Use red for danger/live */
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, .app-layout {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark);
+    color: var(--text-medium);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-medium); /* Default link color */
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: var(--primary-red);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-padding {
+    padding: 50px 0; /* Consistent vertical padding */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Buttons (ArenaGG Style) --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase; /* ArenaGG buttons seem uppercase */
+    letter-spacing: 0.5px;
+}
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+}
+.btn-primary:hover {
+    background-color: #c0001d; /* Darker red on hover */
+}
+
+.btn-secondary { /* Dark button style */
+    background-color: var(--bg-medium);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+    background-color: #252525;
+    border-color: #444;
+}
+
+/* --- Header (ArenaGG Style) --- */
+.site-header {
+    background-color: var(--bg-medium);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.logo:hover {
+    color: var(--primary-red); /* Prevent hover change */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--text-medium);
+    font-weight: 500;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; /* For active state */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--text-light);
+}
+.main-nav li.active a {
+     color: var(--text-light);
+     font-weight: 700;
+     border-bottom-color: var(--primary-red);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+/* Add styles for search, notifications etc. if needed */
+.btn-login-register {
+    padding: 8px 18px;
+    margin-left: 20px; /* Space from nav or other icons */
+}
+
+/* --- Footer (ArenaGG Style - From Previous Example) --- */
+.site-footer {
+    background-color: #0a0a0a; /* Even darker footer */
+    color: var(--text-medium);
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-left .logo { margin-bottom: 15px; display: block; }
+.social-icons a { color: var(--text-medium); margin-right: 15px; font-size: 1.2rem; }
+.social-icons a:hover { color: var(--primary-red); }
+.footer-right { display: flex; gap: 40px; flex-wrap: wrap; }
+.footer-links h4 { color: var(--text-light); margin-bottom: 10px; font-size: 1rem; font-weight: 700;}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 8px; }
+.footer-links a { color: var(--text-medium); font-size: 0.9rem; }
+.footer-links a:hover { color: var(--text-light); }
+
+
+/* --- Main Content --- */
+.main-content {
+    flex-grow: 1;
+    flex: 1 0 auto;
+}
+
+/* Hero Section (ArenaGG Style) */
+.hero-section {
+    min-height: 40vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    background-size: cover;
+    background-position: center;
+}
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: var(--text-medium);
+}
+
+/* Content Body Layout */
+.content-container {
+    display: flex;
+    gap: 30px;
+}
+.matches-column {
+    flex-grow: 1;
+    min-width: 0;
+}
+.right-sidebar {
+    width: 300px; /* Adjust as needed */
+    flex-shrink: 0;
+}
+
+/* --- Reusable Content Block (ArenaGG Dark Card) --- */
+.content-block {
+    background-color: var(--bg-medium);
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Subtle rounding */
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+/* --- Filter Block (ArenaGG Subtle Style) --- */
+.filter-block {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: var(--bg-medium); /* Match card background */
+    border: none; /* Remove default border */
+    margin-bottom: 20px; /* Space below filters */
+}
+.filter-group select {
+    padding: 8px 12px;
+    background-color: var(--bg-dark); /* Darker input bg */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-medium);
+    font-family: inherit;
+    min-width: 180px;
+    font-size: 0.9rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23cccccc'%3E%3Cpath fill-rule='evenodd' d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 30px;
+}
+.filter-button {
+    padding: 9px 20px;
+    margin-left: auto; /* Push button to the right */
+}
+.filter-button i { margin-right: 5px; }
+
+
+/* --- Matches List (ArenaGG Style) --- */
+.matches-list { padding: 0; }
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #222; /* Slightly different header bg */
+}
+.list-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.header-actions i { color: var(--text-medium); cursor: pointer; }
+.header-actions i:hover { color: var(--text-light); }
+
+.match-row {
+    display: grid; /* Use grid for better alignment */
+    grid-template-columns: 1fr auto auto; /* Info | Teams | Odds/Link */
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    gap: 15px;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+.match-row:last-child { border-bottom: none; }
+.match-row:hover { background-color: #202020; } /* Subtle hover */
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--text-medium);
+}
+.match-status {
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    align-self: flex-start; /* Align badge to start */
+    margin-bottom: 2px;
+}
+.match-row.live .match-status { background-color: var(--danger-color); color: var(--text-light); }
+.match-row:not(.live):not(.finished) .match-status { background-color: var(--border-color); color: var(--text-medium); }
+.match-row.finished .match-status { background-color: #444; color: var(--text-medium); }
+.live-dot { font-size: 0.7em; margin-right: 4px; animation: pulse 1.5s infinite ease-in-out; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.match-time { font-weight: 500; }
+.match-details { font-style: italic; }
+.tournament-icon { display: flex; align-items: center; gap: 5px; }
+.tournament-icon i { color: var(--text-medium); }
+
+.teams-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center teams area */
+    gap: 15px;
+}
+.team { display: flex; align-items: center; gap: 10px; }
+.team-a { justify-content: flex-end; text-align: right; }
+.team-b { justify-content: flex-start; }
+.team-logo { width: 28px; height: 28px; border-radius: 4px; background-color: #333; }
+.team-name { font-size: 1rem; font-weight: 700; color: var(--text-light); }
+.team-a .team-logo { order: 1; } /* Logo after name */
+.team-b .team-logo { order: -1; } /* Logo before name */
+
+.match-center { text-align: center; }
+.score { font-weight: 700; font-size: 1.1rem; color: var(--text-light); margin-bottom: 0; }
+.vs { font-size: 0.8rem; color: var(--text-medium); font-weight: 700; margin: 0 5px; }
+.match-row:not(.live):not(.finished) .score { display: none; }
+
+.match-odds {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.8rem;
+    color: var(--text-medium);
+}
+.match-odds .odds {
+    background-color: #282828;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+}
+
+.match-link {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-medium);
+    font-size: 1.2rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+.match-row:hover .match-link { opacity: 1; }
+.match-link:hover { color: var(--primary-red); }
+
+
+.match-row.finished .team.loser .team-name { opacity: 0.6; }
+.match-row.finished .team.winner .team-name { color: var(--success-color); font-weight: 700; }
+
+
+/* Pagination (ArenaGG Style) */
+.pagination { display: flex; justify-content: center; padding: 20px; border-top: 1px solid var(--border-color); }
+.pagination button { background: var(--bg-medium); border: 1px solid var(--border-color); color: var(--text-medium); padding: 8px 12px; margin: 0 3px; border-radius: 4px; cursor: pointer; }
+.pagination button:hover:not(:disabled) { background-color: #252525; color: var(--text-light); }
+.pagination button.active { background-color: var(--primary-red); color: #fff; border-color: var(--primary-red); }
+.pagination button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* --- Right Sidebar Widgets (ArenaGG Style) --- */
+.right-sidebar .content-block {
+    padding: 0; /* Remove padding from block, add to title/content */
+}
+.widget-title {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    background-color: #222; /* Header background */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.widget-content {
+    padding: 20px;
+}
+
+.news-widget img { border-radius: 4px; margin-bottom: 15px; }
+.news-widget h5 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 700;}
+.news-widget h5 a { color: var(--text-light); }
+.news-widget h5 a:hover { color: var(--primary-red); }
+.news-widget p { font-size: 0.9rem; color: var(--text-medium); margin-bottom: 15px; }
+.widget-button { font-size: 0.85rem; }
+.widget-button i { margin-left: 5px; }
+
+
+.predictions-widget ul { list-style: none; }
+.predictions-widget li { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+.predictions-widget li:last-child { border-bottom: none; }
+.prediction-stats { font-weight: 600; white-space: nowrap; }
+.prediction-stats .success { color: var(--success-color); }
+.prediction-stats .danger { color: var(--danger-color); }
+.prediction-stats i { margin: 0 3px; }
+
+
+.prize-pool-widget table { width: 100%; border-collapse: collapse; }
+.prize-pool-widget td { padding: 8px 5px; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); }
+.prize-pool-widget tr:last-child td { border-bottom: none; }
+.prize-pool-widget td:first-child { color: var(--text-medium); }
+.prize-pool-widget .prize { font-weight: 700; color: var(--text-light); text-align: right; white-space: nowrap; }
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .content-container {
+        flex-direction: column; /* Stack columns */
+    }
+    .right-sidebar {
+        width: 100%;
+    }
+    .main-nav { display: none; } /* Basic: Hide nav on smaller screens - Needs JS for toggle */
+    /* Removed empty ruleset */
+    .match-row { grid-template-columns: 1fr auto; } /* Stack odds/link below */
+    .match-odds { grid-column: 1 / -1; justify-self: end; margin-top: 5px; }
+    .match-link { font-size: 1rem; top: 15px; right: 15px; }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 2rem; }
+    .hero-section p { font-size: 1rem; }
+    .teams-vs { flex-direction: column; gap: 5px; align-items: stretch; }
+    .team { justify-content: center; text-align: center; }
+    .team-a, .team-b { text-align: center; justify-content: center; }
+    .team-a .team-logo { order: -1; } /* Logo before name */
+    .team-b .team-logo { order: -1; } /* Logo before name */
+    .match-center .vs { margin: 2px 0; }
+    .filter-block { flex-direction: column; align-items: stretch; }
+    .filter-button { margin-left: 0; width: 100%; margin-top: 10px; }
+}
+
+/* --- Game Sidebar Styles --- */
+.game-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #181818;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: 2px 0 16px 0 rgba(0,0,0,0.18);
+    transition: background 0.4s, box-shadow 0.3s;
+}
+.sidebar-header {
+    width: 100%;
+    text-align: center;
+    padding: 32px 0 18px 0;
+}
+.sidebar-logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    background: #222;
+    object-fit: contain;
+}
+#sidebar-game-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+.sidebar-nav {
+    width: 100%;
+    margin-top: 20px;
+}
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-nav li {
+    width: 100%;
+    margin-bottom: 8px;
+}
+.sidebar-nav a {
+    display: block;
+    width: 100%;
+    padding: 14px 0 14px 40px;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.sidebar-nav a.active, .sidebar-nav a:hover {
+    background: rgba(230,0,35,0.10);
+    border-left: 4px solid var(--primary-red);
+    color: var(--primary-red);
+}
+
+/* Game selection buttons */
+.game-select-list {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.game-select-btn {
+    width: 80%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #232323;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-bottom: 2px;
+}
+.game-select-btn.selected, .game-select-btn:hover {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+/* --- Game Atmospheres --- */
+.dota2-atmosphere {
+    background: linear-gradient(135deg, #1b232e 60%, #a1c4fd 100%);
+}
+body.dota2-atmosphere {
+    background: linear-gradient(120deg, #1b232e 60%, #232b38 100%);
+}
+.cs2-atmosphere {
+    background: linear-gradient(135deg, #232323 60%, #f9d423 100%);
+}
+body.cs2-atmosphere {
+    background: linear-gradient(120deg, #232323 60%, #f9d423 100%);
+}
+.valorant-atmosphere {
+    background: linear-gradient(135deg, #0f1923 60%, #ff4655 100%);
+}
+body.valorant-atmosphere {
+    background: linear-gradient(120deg, #0f1923 60%, #ff4655 100%);
+}
+
+/* --- Main content shift for sidebar --- */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    background: transparent;
+    transition: background 0.4s;
+}
+
+@media (max-width: 900px) {
+    .game-sidebar {
+        width: 60px;
+        min-width: 60px;
+    }
+    .main-content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+    .sidebar-header, .sidebar-nav, .game-select-list {
+        display: none;
+    }
+}
+
+/* --- Add towards the top or within relevant sections --- */
+@keyframes gradientShift { /* Optional: For hero background */
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Enhance existing styles --- */
+
+.btn {
+    /* ... existing styles ... */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+}
+.btn:active {
+    transform: scale(0.97); /* Slightly more noticeable press */
+    transition-duration: 0.05s;
+}
+
+.main-nav a {
+    /* ... existing styles ... */
+    position: relative; /* Needed for pseudo-element */
+    overflow: hidden; /* Hide pseudo-element initially */
+    transition: color 0.2s ease; /* Keep color transition */
+}
+/* Remove border-bottom transitions if using underline */
+.main-nav a::after {
+    content: ''; position: absolute; bottom: -2px; left: -100%;
+    width: 100%; height: 2px; background-color: var(--primary-red);
+    transition: left 0.3s ease;
+}
+.main-nav li.active a {
+    border-bottom-color: transparent; /* Hide default active border */
+}
+.main-nav li.active a::after,
+.main-nav a:hover::after {
+    left: 0;
+}
+
+.form-group input,
+.form-group textarea,
+.filter-group select {
+    /* ... existing styles ... */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* --- Add hover/focus and motion preference checks --- */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(230, 0, 35, 0.3); /* Red glow for primary */
+    }
+    .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Lighter glow for secondary */
+    }
+
+    .tournament-card,
+    .match-row,
+    .widget { /* Add transition for motion library */
+        transition: background-color 0.2s ease; /* Keep bg transition for hover */
+    }
+
+    /* Optional: Hero gradient animation */
+    /* .hero-section {
+        background: linear-gradient(45deg, #1a1a1a, #2a0007, #1a1a1a, #40000b);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+    } */
+
+    /* Focus styles remain outside prefers-reduced-motion as they are important for accessibility */
+
+}
+/* Always show focus styles */
+.form-group input:focus,
+.form-group textarea:focus,
+.filter-group select:focus {
+     outline: none;
+     border-color: var(--primary-red);
+     box-shadow: 0 0 0 3px rgba(230, 0, 35, 0.3);
+}
+
+/* CSS for Skeleton base styles (can be adjusted) */
+.react-loading-skeleton {
+    background-color: #202020 !important; /* Use !important cautiously */
+    background-image: linear-gradient(
+        90deg,
+        #202020,
+        #333333,
+        #202020
+    ) !important;
+    border-radius: 4px;
+}
+
+/* --- Enhanced ArenaGG Visuals & Effects --- */
+
+/* Neon Glow Button Effect */
+.btn-primary {
+    box-shadow: 0 0 12px 2px rgba(230,0,35,0.6), 0 2px 8px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+.btn-primary:hover, .btn-primary:focus {
+    box-shadow: 0 0 24px 6px rgba(230,0,35,0.8), 0 4px 16px rgba(0,0,0,0.4);
+    background-color: #ff003c;
+    color: #fff;
+}
+
+/* Glassmorphism Card Effect */
+.content-block, .filter-block, .matches-list, .right-sidebar .content-block {
+    background: rgba(26,26,26,0.85);
+    backdrop-filter: blur(8px) saturate(120%);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25), 0 1.5px 8px 0 rgba(230,0,35,0.08);
+    border: 1.5px solid rgba(230,0,35,0.12);
+}
+
+/* Animated Gradient Hero Section */
+.hero-section {
+    background: linear-gradient(120deg, #1a1a1a 0%, #2a0007 40%, #E60023 100%, #1a1a1a 120%);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease-in-out infinite;
+    box-shadow: 0 8px 32px 0 rgba(230,0,35,0.10);
+    border-bottom: 2px solid var(--primary-red);
+    position: relative;
+    overflow: hidden;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 60% 40%, rgba(230,0,35,0.12) 0%, transparent 70%);
+    z-index: 0;
+}
+.hero-section > * { position: relative; z-index: 1; }
+
+/* Futuristic Accent Border for Cards */
+.content-block {
+    border-radius: 12px;
+    border: 2px solid rgba(230,0,35,0.18);
+    box-shadow: 0 2px 24px 0 rgba(230,0,35,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.content-block:hover {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 32px 0 rgba(230,0,35,0.18), 0 2px 16px 0 rgba(0,0,0,0.18);
+}
+
+/* Animated Underline for Navigation */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2.5px;
+    background: linear-gradient(90deg, #E60023 0%, #ff003c 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), background 0.3s;
+}
+.main-nav a:hover::after, .main-nav li.active a::after {
+    transform: scaleX(1);
+}
+
+/* Glowing Focus for Inputs */
+.form-group input:focus, .form-group textarea:focus, .filter-group select:focus {
+    border-color: #ff003c;
+    box-shadow: 0 0 0 3px rgba(230,0,35,0.25), 0 0 8px 2px rgba(230,0,35,0.10);
+}
+
+/* Card Hover Lift Effect */
+.content-block, .matches-list, .right-sidebar .content-block {
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+.content-block:hover, .matches-list:hover, .right-sidebar .content-block:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0 8px 32px 0 rgba(230,0,35,0.18), 0 2px 16px 0 rgba(0,0,0,0.18);
+}
+
+/* Neon Glow for Live Matches */
+.match-row.live {
+    box-shadow: 0 0 16px 2px rgba(230,0,35,0.18);
+    position: relative;
+    z-index: 1;
+}
+.match-row.live::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    border-radius: 8px;
+    pointer-events: none;
+    box-shadow: 0 0 24px 6px rgba(230,0,35,0.18);
+    opacity: 0.7;
+    z-index: 0;
+}
+.match-row.live > * { position: relative; z-index: 1; }
+
+/* Animated Glow for Live Dot */
+.live-dot {
+    text-shadow: 0 0 8px #E60023, 0 0 16px #ff003c;
+    animation: pulse 1.2s infinite alternate, liveGlow 1.2s infinite alternate;
+}
+@keyframes liveGlow {
+    0% { text-shadow: 0 0 8px #E60023, 0 0 16px #ff003c; }
+    100% { text-shadow: 0 0 16px #ff003c, 0 0 32px #E60023; }
+}
+
+/* Futuristic Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #181818;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #E60023 0%, #1a1a1a 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 8px 2px rgba(230,0,35,0.10);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(120deg, #ff003c 0%, #2a0007 100%);
+}
+
+/* Subtle Particle Overlay (optional, for hero or body) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="1.5" fill="%23E60023" opacity="0.12"/><circle cx="80" cy="40" r="1" fill="%23ff003c" opacity="0.10"/><circle cx="200" cy="120" r="2" fill="%23fff" opacity="0.08"/></svg>');
+    opacity: 0.5;
+}
+
+/* Enhanced Footer Glow */
+.site-footer {
+    box-shadow: 0 -4px 32px 0 rgba(230,0,35,0.10);
+    border-top: 2px solid var(--primary-red);
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Animated border for active nav item */
+.main-nav li.active a {
+    background: linear-gradient(90deg, #E60023 0%, #ff003c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* Optional: Add a subtle floating animation to hero text */
+.hero-section h1, .hero-section p {
+    animation: floatText 3.5s ease-in-out infinite alternate;
+}
+@keyframes floatText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+/* --- End Enhanced ArenaGG Visuals & Effects --- */

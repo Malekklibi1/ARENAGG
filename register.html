@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ArenaGG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="home.html" class="logo">ArenaGG</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a href="register.html" class="btn btn-primary btn-login-register">Login/Register</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Login/Register Section -->
+        <section id="login-section" class="login-section section-padding" style="background-image: url('img/register-banner.jpg');">
+            <div class="container">
+                <div class="login-form-container">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Value" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Value" required>
+                        </div>
+                        <div class="form-actions">
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                            <div class="form-buttons">
+                                <button type="submit" class="btn btn-dark">Sign In</button>
+                                <button type="button" class="btn btn-dark btn-register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <a href="home.html" class="logo">ArenaGG</a>
+            <p>&copy; 2025 ArenaGG. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('email').value.trim().toLowerCase();
+        var password = document.getElementById('password').value;
+        if ((email === 'admin' || email === 'admin@admin') && password === 'admin') {
+            window.location.href = 'user.html';
+        } else {
+            alert('Invalid credentials');
+        }
+    });
+    </script>
+</body>
+</html>

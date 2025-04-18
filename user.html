@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Matches - ArenaGG Style</title>
+    <link rel="stylesheet" href="arenagg_style.css">
+    <!-- Using Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Roboto - closer to ArenaGG) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar (Static, Game Atmosphere) -->
+        <aside id="game-sidebar" class="game-sidebar dota2-atmosphere">
+            <div class="sidebar-header">
+                <img id="sidebar-game-logo" src="img/dota 2.jpg" alt="Dota 2 Logo" class="sidebar-logo">
+                <h2 id="sidebar-game-title">Dota 2</h2>
+            </div>
+            <div class="game-select-list">
+                <button class="game-select-btn selected" data-game="dota2">Dota 2</button>
+                <button class="game-select-btn" data-game="cs2">CS2</button>
+                <button class="game-select-btn" data-game="valorant">Valorant</button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a id="sidebar-news-link" href="dota2-news.html">News</a></li>
+                    <li><a id="sidebar-predictions-link" href="dota2-predictions.html">Predictions</a></li>
+                    <li><a id="sidebar-prizepools-link" href="dota2-prizepools.html">Prize Pools</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Section (ArenaGG Style) -->
+            <section class="hero-section section-padding" id="game-hero-section" style="background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('img/dota 2 banner.jpg');">
+                 <div class="container text-center">
+                    <h1 id="game-hero-title">Dota 2 Matches</h1>
+                    <p id="game-hero-desc">Follow live scores, upcoming games, and recent results for Dota 2.</p>
+                 </div>
+            </section>
+
+            <!-- Content Body (Matches & Sidebar) -->
+            <section class="content-body section-padding">
+                <div class="container content-container">
+                    <!-- Left Column: Matches -->
+                    <div class="matches-column">
+                        <!-- Filters (Subtle ArenaGG Style) -->
+                        <div class="content-block filter-block">
+                            <div class="filter-group">
+                                <select id="tournament-filter">
+                                    <option>All Tournaments</option>
+                                    <option>ESL One Raleigh 2025</option>
+                                    <option>FISSURE Special</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <select id="stage-filter">
+                                    <option>All Stages</option>
+                                    <option>Group Stage</option>
+                                    <option>Playoffs</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary filter-button"><i class="fas fa-search"></i> Filter</button>
+                        </div>
+
+                        <!-- Upcoming Matches -->
+                        <div class="content-block matches-list upcoming-matches" id="upcoming-matches">
+                            <div class="list-header">
+                                <h3>Upcoming Matches</h3>
+                                <div class="header-actions">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                            <!-- Match Row (Repeat for each match - ArenaGG Dark Card Style) -->
+                            <article class="match-row live"> <!-- Add 'live' class -->
+                                <div class="match-info">
+                                    <span class="match-status"><i class="fas fa-circle live-dot"></i> LIVE</span>
+                                    <time class="match-time" datetime="2024-04-28T12:00">Apr 28, 12:00</time>
+                                    <span class="match-details">BO3</span>
+                                    <span class="tournament-icon" title="ESL One"><i class="fas fa-star"></i> ESL One</span>
+                                </div>
+                                <div class="teams-vs">
+                                    <div class="team team-a">
+                                        <span class="team-name">PARIVISION</span>
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                    </div>
+                                    <div class="match-center">
+                                        <span class="score">1-0</span>
+                                        <span class="vs">vs</span>
+                                    </div>
+                                    <div class="team team-b">
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                        <span class="team-name">Liquid</span>
+                                    </div>
+                                </div>
+                                <div class="match-odds">
+                                    <span class="odds">(1.25)</span>
+                                    <span class="odds">(3.50)</span>
+                                </div>
+                                <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                            </article>
+
+                            <article class="match-row">
+                                <div class="match-info">
+                                    <span class="match-status">Upcoming</span>
+                                     <time class="match-time" datetime="2024-04-28T15:00">Apr 28, 15:00</time>
+                                     <span class="match-details">BO3</span>
+                                     <span class="tournament-icon" title="FISSURE"><i class="fas fa-fire"></i> FISSURE</span>
+                                </div>
+                                <div class="teams-vs">
+                                     <div class="team team-a">
+                                        <span class="team-name">Ivory</span>
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                    </div>
+                                    <div class="match-center"><span class="vs">vs</span></div>
+                                    <div class="team team-b">
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                        <span class="team-name">YG</span>
+                                    </div>
+                                </div>
+                                <div class="match-odds">
+                                    <span class="odds">(1.36)</span>
+                                    <span class="odds">(2.80)</span>
+                                </div>
+                                 <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                            </article>
+                             <!-- ... more match rows ... -->
+                            <div class="pagination">
+                                <button disabled>«</button>
+                                <button class="active">1</button>
+                                <button>2</button>
+                                <button>3</button>
+                                <button>»</button>
+                            </div>
+                        </div>
+
+                         <!-- Recent Matches -->
+                         <div class="content-block matches-list recent-matches" id="recent-matches">
+                            <div class="list-header">
+                                <h3>Recent Results</h3>
+                                 <div class="header-actions">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                            </div>
+                            <article class="match-row finished"> <!-- Add 'finished' class -->
+                                <div class="match-info">
+                                     <span class="match-status">Finished</span>
+                                     <time class="match-time" datetime="2024-04-27T18:00">Apr 27, 18:00</time>
+                                     <span class="match-details">BO3</span>
+                                      <span class="tournament-icon" title="ESL One"><i class="fas fa-star"></i> ESL One</span>
+                                </div>
+                                <div class="teams-vs">
+                                    <div class="team team-a winner"> <!-- Add 'winner' class -->
+                                        <span class="team-name">Liquid</span>
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                    </div>
+                                    <div class="match-center">
+                                        <span class="score">2 - 0</span>
+                                        <span class="vs">vs</span>
+                                    </div>
+                                    <div class="team team-b loser">
+                                        <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                        <span class="team-name">AVULUS</span>
+                                    </div>
+                                </div>
+                                <div class="match-odds">
+                                    <!-- Optionally hide odds for finished matches or show closing odds -->
+                                    <!-- <span class="odds">(1.32)</span> <span class="odds">(3.00)</span> -->
+                                </div>
+                                <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                            </article>
+                            <!-- ... more recent match rows ... -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer (ArenaGG Style) -->
+        <footer class="site-footer">
+             <div class="container footer-container">
+                 <div class="footer-left">
+                     <a href="#" class="logo">ArenaGG</a>
+                     <div class="social-icons">
+                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                         <a href="#"><i class="fab fa-youtube"></i></a>
+                         <a href="#"><i class="fab fa-instagram"></i></a>
+                     </div>
+                 </div>
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Tournaments</a></li>
+                            <li><a href="#">Support</a></li>
+                             <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">API</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Example data for two games (expand as needed)
+        const gameData = {
+            "Dota 2": {
+                upcoming: `
+                    <div class="list-header">
+                        <h3>Upcoming Matches</h3>
+                        <div class="header-actions"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                    <article class="match-row live">
+                        <div class="match-info">
+                            <span class="match-status"><i class="fas fa-circle live-dot"></i> LIVE</span>
+                            <time class="match-time" datetime="2024-04-28T12:00">Apr 28, 12:00</time>
+                            <span class="match-details">BO3</span>
+                            <span class="tournament-icon" title="ESL One"><i class="fas fa-star"></i> ESL One</span>
+                        </div>
+                        <div class="teams-vs">
+                            <div class="team team-a">
+                                <span class="team-name">PARIVISION</span>
+                                <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                            </div>
+                            <div class="match-center">
+                                <span class="score">1-0</span>
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team team-b">
+                                <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                <span class="team-name">Liquid</span>
+                            </div>
+                        </div>
+                        <div class="match-odds">
+                            <span class="odds">(1.25)</span>
+                            <span class="odds">(3.50)</span>
+                        </div>
+                        <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                    </article>
+                    <!-- ...more Dota 2 matches... -->
+                    <div class="pagination">
+                        <button disabled>«</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>»</button>
+                    </div>
+                `,
+                recent: `
+                    <div class="list-header">
+                        <h3>Recent Results</h3>
+                        <div class="header-actions"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                    <article class="match-row finished">
+                        <div class="match-info">
+                            <span class="match-status">Finished</span>
+                            <time class="match-time" datetime="2024-04-27T18:00">Apr 27, 18:00</time>
+                            <span class="match-details">BO3</span>
+                            <span class="tournament-icon" title="ESL One"><i class="fas fa-star"></i> ESL One</span>
+                        </div>
+                        <div class="teams-vs">
+                            <div class="team team-a winner">
+                                <span class="team-name">Liquid</span>
+                                <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                            </div>
+                            <div class="match-center">
+                                <span class="score">2 - 0</span>
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team team-b loser">
+                                <img src="img/dota 2.jpg" alt="Team Logo" class="team-logo">
+                                <span class="team-name">AVULUS</span>
+                            </div>
+                        </div>
+                        <div class="match-odds"></div>
+                        <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                    </article>
+                    <!-- ...more Dota 2 recent matches... -->
+                `,
+                news: `
+                    <h4 class="widget-title">Latest News</h4>
+                    <div class="widget-content news-widget">
+                        <img src="img/real-news-image.jpg" alt="News Image">
+                        <h5><a href="#">Dota 2 Patch 7.38 Announced!</a></h5>
+                        <p>Big changes coming to the map, heroes, and items...</p>
+                        <a href="#" class="btn btn-secondary widget-button">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `,
+                predictions: `
+                    <h4 class="widget-title">Top Predictions</h4>
+                    <div class="widget-content predictions-widget">
+                        <ul>
+                            <li><span>Wito</span> <span class="prediction-stats">79% <i class="fas fa-arrow-up success"></i> Today</span></li>
+                            <li><span>Data by Stoax</span> <span class="prediction-stats">33% <i class="fas fa-arrow-down danger"></i></span></li>
+                            <li><span>AnalystX</span> <span class="prediction-stats">65% <i class="fas fa-arrow-up success"></i></span></li>
+                        </ul>
+                    </div>
+                `
+            },
+            "CS2": {
+                upcoming: `
+                    <div class="list-header">
+                        <h3>Upcoming Matches</h3>
+                        <div class="header-actions"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                    <article class="match-row">
+                        <div class="match-info">
+                            <span class="match-status">Upcoming</span>
+                            <time class="match-time" datetime="2024-05-01T18:00">May 1, 18:00</time>
+                            <span class="match-details">BO3</span>
+                            <span class="tournament-icon" title="BLAST Premier"><i class="fas fa-bolt"></i> BLAST Premier</span>
+                        </div>
+                        <div class="teams-vs">
+                            <div class="team team-a">
+                                <span class="team-name">NAVI</span>
+                                <img src="img/cs 2 logo.png" alt="Team Logo" class="team-logo">
+                            </div>
+                            <div class="match-center"><span class="vs">vs</span></div>
+                            <div class="team team-b">
+                                <img src="img/cs 2 logo.png" alt="Team Logo" class="team-logo">
+                                <span class="team-name">G2</span>
+                            </div>
+                        </div>
+                        <div class="match-odds">
+                            <span class="odds">(1.80)</span>
+                            <span class="odds">(2.00)</span>
+                        </div>
+                        <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                    </article>
+                    <!-- ...more CS2 matches... -->
+                    <div class="pagination">
+                        <button disabled>«</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>»</button>
+                    </div>
+                `,
+                recent: `
+                    <div class="list-header">
+                        <h3>Recent Results</h3>
+                        <div class="header-actions"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                    <article class="match-row finished">
+                        <div class="match-info">
+                            <span class="match-status">Finished</span>
+                            <time class="match-time" datetime="2024-04-30T20:00">Apr 30, 20:00</time>
+                            <span class="match-details">BO3</span>
+                            <span class="tournament-icon" title="IEM"><i class="fas fa-trophy"></i> IEM</span>
+                        </div>
+                        <div class="teams-vs">
+                            <div class="team team-a winner">
+                                <span class="team-name">FaZe</span>
+                                <img src="img/cs 2 logo.png" alt="Team Logo" class="team-logo">
+                            </div>
+                            <div class="match-center">
+                                <span class="score">2 - 1</span>
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team team-b loser">
+                                <img src="img/cs 2 logo.png" alt="Team Logo" class="team-logo">
+                                <span class="team-name">Vitality</span>
+                            </div>
+                        </div>
+                        <div class="match-odds"></div>
+                        <a href="#" class="match-link"><i class="fas fa-chevron-right"></i></a>
+                    </article>
+                    <!-- ...more CS2 recent matches... -->
+                `,
+                news: `
+                    <h4 class="widget-title">Latest News</h4>
+                    <div class="widget-content news-widget">
+                        <img src="img/real-news-image.jpg" alt="News Image">
+                        <h5><a href="#">CS2 Major Announced!</a></h5>
+                        <p>The first CS2 Major will take place in 2024 with a $2M prize pool.</p>
+                        <a href="#" class="btn btn-secondary widget-button">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `,
+                predictions: `
+                    <h4 class="widget-title">Top Predictions</h4>
+                    <div class="widget-content predictions-widget">
+                        <ul>
+                            <li><span>ProStrats</span> <span class="prediction-stats">70% <i class="fas fa-arrow-up success"></i> Today</span></li>
+                            <li><span>CSGenius</span> <span class="prediction-stats">55% <i class="fas fa-arrow-up success"></i></span></li>
+                            <li><span>EcoKing</span> <span class="prediction-stats">40% <i class="fas fa-arrow-down danger"></i></span></li>
+                        </ul>
+                    </div>
+                `
+            }
+            // Add more games as needed
+        };
+
+        // Helper to get selected game
+        function getSelectedGame() {
+            const select = document.getElementById('game-filter');
+            return select ? select.value : "All Games";
+        }
+
+        // Update content based on selected game
+        function updateContentForGame(game) {
+            if (gameData[game]) {
+                document.getElementById('upcoming-matches').innerHTML = gameData[game].upcoming;
+                document.getElementById('recent-matches').innerHTML = gameData[game].recent;
+                document.getElementById('news-widget').innerHTML = gameData[game].news;
+                document.getElementById('predictions-widget').innerHTML = gameData[game].predictions;
+            } else {
+                // Default: show Dota 2 or all games
+                document.getElementById('upcoming-matches').innerHTML = gameData["Dota 2"].upcoming;
+                document.getElementById('recent-matches').innerHTML = gameData["Dota 2"].recent;
+                document.getElementById('news-widget').innerHTML = gameData["Dota 2"].news;
+                document.getElementById('predictions-widget').innerHTML = gameData["Dota 2"].predictions;
+            }
+        }
+
+        // Listen for game filter changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const gameFilter = document.getElementById('game-filter');
+            if (gameFilter) {
+                gameFilter.addEventListener('change', function() {
+                    updateContentForGame(this.value);
+                });
+            }
+        });
+
+        // Sidebar game switch logic
+        const gameMeta = {
+            dota2: {
+                class: 'dota2-atmosphere',
+                logo: 'img/dota 2.jpg',
+                banner: 'img/dota 2 banner.jpg',
+                title: 'Dota 2',
+                heroTitle: 'Dota 2 Matches',
+                heroDesc: 'Follow live scores, upcoming games, and recent results for Dota 2.',
+                links: {
+                    news: 'dota2-news.html',
+                    predictions: 'dota2-predictions.html',
+                    prizepools: 'dota2-prizepools.html'
+                }
+            },
+            cs2: {
+                class: 'cs2-atmosphere',
+                logo: 'img/cs 2 logo.png',
+                banner: 'img/counter-strike-2-pc-jeu-steam-cover.jpg',
+                title: 'CS2',
+                heroTitle: 'CS2 Matches',
+                heroDesc: 'Live CS2 tournaments, results, and stats.',
+                links: {
+                    news: 'cs2-news.html',
+                    predictions: 'cs2-predictions.html',
+                    prizepools: 'cs2-prizepools.html'
+                }
+            },
+            valorant: {
+                class: 'valorant-atmosphere',
+                logo: 'img/valorant logo.png',
+                banner: 'img/placeholder-valorant.jpg.webp',
+                title: 'Valorant',
+                heroTitle: 'Valorant Matches',
+                heroDesc: 'Track Valorant events, live games, and results.',
+                links: {
+                    news: 'valorant-news.html',
+                    predictions: 'valorant-predictions.html',
+                    prizepools: 'valorant-prizepools.html'
+                }
+            }
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('game-sidebar');
+            const body = document.body;
+            const logo = document.getElementById('sidebar-game-logo');
+            const title = document.getElementById('sidebar-game-title');
+            const newsLink = document.getElementById('sidebar-news-link');
+            const predictionsLink = document.getElementById('sidebar-predictions-link');
+            const prizepoolsLink = document.getElementById('sidebar-prizepools-link');
+            const heroSection = document.getElementById('game-hero-section');
+            const heroTitle = document.getElementById('game-hero-title');
+            const heroDesc = document.getElementById('game-hero-desc');
+            const gameBtns = document.querySelectorAll('.game-select-btn');
+            gameBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    gameBtns.forEach(b => b.classList.remove('selected'));
+                    this.classList.add('selected');
+                    const game = this.getAttribute('data-game');
+                    const meta = gameMeta[game];
+                    // Update sidebar and body classes
+                    sidebar.className = 'game-sidebar ' + meta.class;
+                    body.className = meta.class;
+                    // Update logo and title
+                    logo.src = meta.logo;
+                    logo.alt = meta.title + ' Logo';
+                    title.textContent = meta.title;
+                    // Update links
+                    newsLink.href = meta.links.news;
+                    predictionsLink.href = meta.links.predictions;
+                    prizepoolsLink.href = meta.links.prizepools;
+                    // Update hero/banner
+                    heroSection.style.backgroundImage = `linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('${meta.banner}')`;
+                    heroTitle.textContent = meta.heroTitle;
+                    heroDesc.textContent = meta.heroDesc;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
