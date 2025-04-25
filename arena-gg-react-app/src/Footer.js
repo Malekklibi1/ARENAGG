@@ -13,7 +13,7 @@ const FooterLinks = ({ title, links }) => (
 
 
 const Footer = () => {
-    const navLinks = [ {href: "#", label: "Home"}, {href: "#", label: "Tournaments"}, {href: "#", label: "Support"}, {href: "#", label: "Contact Us"}];
+    const navLinks = [ {href: "/", label: "Home"}, {href: "/user", label: "Tournaments"}, {href: "/support", label: "Support"}, {href: "/contact", label: "Contact Us"}];
     const resourceLinks = [ {href: "#", label: "API"}, {href: "#", label: "Partners"}, {href: "#", label: "Blog"}];
     const legalLinks = [ {href: "#", label: "Terms of Service"}, {href: "#", label: "Privacy Policy"} ];
 
@@ -23,10 +23,10 @@ const Footer = () => {
                 <div className="footer-left">
                     <a href="/" className="logo">ArenaGG</a>
                     <div className="social-icons">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-youtube"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div className="footer-right">
